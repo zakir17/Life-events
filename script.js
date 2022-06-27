@@ -38,17 +38,26 @@ while (true) {
   }
 }
 
-let pay = 10;
-let hours = 45;
-let overtime = hours * pay * 1.5;
-let regPay = hours * pay;
-if (hours <= 40) {
-  console.log(`$${regPay}`);
-} else {
-  console.log(`$${overtime}`);
-}
+let wage = prompt(alert("What is your hourly wage?"));
+console.log(wage);
+let pay = parseInt(wage);
 
+let weekly = prompt(alert("How many hours per week?"));
+let hours = parseInt(weekly);
 let mil = 1000000;
-totalWeeks = mil / overtime;
-console.log(` Number of weeks to make $1,000,000: ${totalWeeks}`);
-console.log(` At a rate wage of $${pay} per hour`);
+
+if (hours <= 40) {
+  let regPay = hours * pay;
+  let totalWeeks = mil / regPay;
+  console.log(`$${regPay}`);
+
+  console.log(` Number of weeks to make $1,000,000: ${totalWeeks}`);
+  console.log(` At a rate wage of $${pay} per hour`);
+} else {
+  let overtime = hours * pay * 1.5;
+  let totalWeeks = mil / overtime;
+  console.log(`$${overtime}`);
+
+  console.log(` Number of weeks to make $1,000,000: ${totalWeeks}`);
+  console.log(` At a rate wage of $${pay} per hour`);
+}
